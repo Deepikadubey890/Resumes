@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Responsive Resume UI Design in HTML and CSS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://kit.fontawesome.com/80f732770d.js" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <style>
+        *{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+}
+
+body{
+	background: #c4c4c4;
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.resume_wrapper{
+	display: flex;
+	width: 800px;
+	margin: 50px auto;
+	background: #fff;
+	padding: 10px;
+}
+
+.resume_wrapper .resume_left{
+	width: 35%;
+	background: #26252d;
+}
+
+.resume_wrapper .resume_left .resume_image{
+	width: 100%;
+}
+
+.resume_wrapper .resume_left .resume_image img{
+	width: 100%;
+	display: block;
+}
+
+.resume_wrapper .resume_title{
+	color:rgb(236, 236, 236);;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 25px;
+	margin-bottom: 10px;
+	letter-spacing: 4px;
+	letter-spacing: 0.05rem;
+}
+
+.resume_wrapper .resume_left .resume_info{
+	color: #dbdae2;
+	font-size: 18px;
+	
+
+}
+.desc{
+	font-size: 18px;
+	font-weight: 400;
+}
+.resume_wrapper .resume_left .resume_bottom{
+	padding: 20px 30px;
+}
+
+.resume_wrapper .resume_item{
+	padding: 20px 0;
+	border-bottom: 1px solid #0175b2;
+}
+
+.resume_wrapper  .resume_item:last-child{
+	border-bottom: 0;
+}
+
+.resume_wrapper .resume_left .resume_namerole{
+	display: none;
+}
+
+.resume_wrapper .resume_namerole .name{
+	font-size: 20px;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 5px;
+	letter-spacing: 4px;
+}
+
+.resume_wrapper .resume_left .resume_namerole .role{
+	color: #84838b;
+}
+
+.resume_wrapper .resume_left .resume_contact .resume_info:last-child{
+	 margin-top: 10px;
+}
+
+.resume_wrapper .resume_left .resume_contact .resume_subtitle{
+	color: #fff;
+	margin-bottom: 2px;
+}
+
+.resume_wrapper .resume_left .resume_skills .skills_list{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 5px;
+}
+
+.resume_wrapper .resume_left .resume_skills .skills_list .skills_bar p{
+	position: relative;
+	width: 125px;
+    height: 20px;
+    background: #fff;
+}
+
+.resume_wrapper .resume_left .resume_skills .skills_list .skills_bar p span{	
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #0175b2;
+	width: 100%;
+	height: 100%;
+}
+.profile img{
+	width:200px;
+	border-radius: 50%;
+	margin:10px;
+	
+}
+.resume_wrapper .resume_right{
+	width: 65%;
+	padding: 20px 40px;
+	color: #26252d;
+}
+
+.resume_wrapper .resume_right .resume_namerole .name{
+	color: #26252d;
+	font-size: 42px;
+}
+
+.resume_wrapper .resume_right .resume_namerole .role{
+	font-size: 20px;
+	text-transform: uppercase;
+	font-weight: 500;
+}
+
+.resume_wrapper .resume_right .resume_item .resume_title{
+	color:#0175b2;
+	
+	font-size: 150%;
+
+}
+
+.resume_wrapper .resume_right .resume_data{
+	display: flex;
+	font-weight: 500;
+	
+}
+
+.resume_wrapper .resume_right .resume_data .year{
+	padding-right: 35px;
+	width: 115px;
+	position: relative;
+}
+
+.resume_wrapper .resume_right .resume_data .content{
+	padding-left: 35px;
+	margin-bottom: 20px;
+	width: calc(100% - 115px);
+	font-size: 120%;
+	
+}
+
+.resume_wrapper .resume_right .resume_data .year:before{
+	content: "";
+	position: absolute;
+	top: 5px;
+	right: 0;
+	width: 10px;
+	height: 10px;
+	
+	background: #fff;
+	border: 1px solid #26252d;
+	border-radius: 50%;
+}
+
+.resume_wrapper .resume_right .resume_data .year:after{
+	content: "";
+    position: absolute;
+    top: 17px;
+    right: 4px;
+    width: 3px;
+    height: 90%;
+	
+    background: #0175b2;
+}
+
+.resume_wrapper .resume_right .resume_data:last-child .year:after{
+	display: none;
+}
+
+.resume_wrapper .resume_right .resmue_interests .resume_info{
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	
+	
+}
+
+.resume_wrapper .resume_right .resmue_interests .interests .int_icon{
+	font-size: 38px;
+	color: #0175b2;
+	margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 800px){
+	.resume_wrapper .resume_right .resume_namerole{
+		display: none;
+	}
+	.resume_wrapper .resume_left .resume_namerole{
+		display: block;
+	}
+	.resume_wrapper{
+		width: 95%;
+		margin: 10px auto;
+		flex-direction: column;
+	}
+	.resume_wrapper .resume_left,
+	.resume_wrapper .resume_right{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 424px){
+	.resume_wrapper .resume_right{
+		padding: 20px 30px;
+	}
+	.resume_wrapper .resume_right .resume_data{
+		flex-direction: column;
+	}
+	.resume_wrapper .resume_right .resume_data .year{
+		padding: 0;
+		margin-bottom: 5px;
+		width: 100%;
+		color: #0175b2;
+	}
+	.resume_wrapper .resume_right .resume_data .year:before,
+	.resume_wrapper .resume_right .resume_data .year:after{
+		display: none;
+	}
+	.resume_wrapper .resume_right .resume_data .content{
+		width: 100%;
+		padding: 0;
+	}
+	.resume_wrapper .resume_right .resmue_interests .interests .int_icon{
+		font-size: 24px;
+	}
+}
+    </style>
+</head>
+<body>
+
+<div class="resume_wrapper">
+	<div class="resume_left">
+	
+		<div class="resume_bottom">
+			<div class="resume_item resume_namerole">
+				<div class="name">Deepika Dubey</div>
+				<div class="role">Frontend Developer</div>
+			</div>
+			<div class="resume_item resume_profile">
+				<div class="resume_title">Profile</div><br>
+				<div class="profile"><img src="./picture.jpeg" alt=""></div>
+				<div class="resume_info">I am pursuing B.tech in information technology (I.T)domain. A diligent and ambitious graduate who is seeking to find opportunity to work in challenging working environment. I am a quick learner and optimistic person. Have a keen interest in learning new skills and willingness to acquire knowledge.</div>
+			</div>
+			<div class="resume_item resume_address">
+				<div class="resume_title">Address</div><br>
+				<div class="resume_info">
+					<i class="far fa-address-card"></i>&nbsp;&nbsp;2746,[E]Sector<br/>
+					Sudama Nagar,<br/>
+					Indore, Madhya Pradesh
+				</div>
+			</div>
+			<div class="resume_item resume_contact">
+				<div class="resume_title">Contact</div><br>
+				<div class="resume_info">
+					<div class="resume_subtitle">Phone</div>
+					<div class="resume_subinfo"><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;+91 9109001609</div>
+				</div><br>
+				<div class="resume_info">
+					<div class="resume_subtitle">Email</div>
+					<div class="resume_subinfo"><i class="fas fa-envelope-square"></i>&nbsp;deepikadubey01052000<br>@gmail.com</div>
+				</div> <br>
+				<div class="resume_info">
+					<div class="resume_subtitle">Linkedin profile</div>
+					<div class="resume_subinfo"><i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/deepika-dubey-5aba891b4/" style="color:#b4def5; font-size: 15px;">https://www.linkedin.com/in/deepika-dubey-5aba891b4/</div>
+				</div>
+			</div>
+
+
+
+			<div class="resume_item resume_contact">
+				<div class="resume_title">Work Sample</div><br>
+			<a href="https://deepikadubey890.github.io/Business-Website/" style="color:#b4def5; font-size: 18px;">Bussiness Websites (click here)</a><br>
+			<a href="https://deepikadubey890.github.io/Ecommerce-Website/" style="color:#b4def5; font-size: 18px;">Ecommerce Website(click here)</a>
+			</div>
+
+
+			<div class="resume_item resume_skills">
+				<div class="resume_title">Skills</div>
+				<br>
+				<div class="resume_info">
+					<div class="skills_list">
+						<div class="skills_left">HTML</div>
+						<div class="skills_bar">
+							<p>
+								<span style="width: 100%"></span>
+							</p>
+						</div>
+					</div><br>
+					<div class="skills_list">
+						<div class="skills_left">CSS</div>
+						<div class="skills_bar">
+							<p>
+								<span style="width: 100%"></span>
+							</p>
+						</div>
+					</div><br>
+					<div class="skills_list">
+						<div class="skills_left">JAVASCRIPT</div>
+						<div class="skills_bar">
+							<p>
+								<span style="width: 80%"></span>
+							</p>
+						</div>
+					</div><br>
+					<div class="skills_list">
+						<div class="skills_left">PHP</div>
+						<div class="skills_bar">
+							<p>
+								<span style="width: 65%"></span>
+							</p>
+						</div>
+					</div><br>
+					<div class="skills_list">
+						<div class="skills_left">MYSQL</div>
+						<div class="skills_bar">
+							<p>
+								<span style="width: 80%"></span>
+							</p>
+						</div>
+					</div><br>
+                    
+					<div class="skills_list">
+						<div class="skills_left">C,C++</div>
+						<div class="skills_bar">
+							<p>
+								<span style="width: 90%"></span>
+							</p>
+						</div>
+					</div><br>
+					<div class="skills_list">
+						<div class="skills_left">JAVA</div>
+						<div class="skills_bar">
+							<p>
+								<span style="width: 70%"></span>
+							</p>
+						</div>
+					</div><br>
+					<div class="skills_list">
+						<div class="skills_left">PYTHON</div>
+						<div class="skills_bar">
+							<p>
+								<span style="width: 50%"></span>
+							</p>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="resume_right">
+		<div class="resume_item resume_namerole">
+			<div class="name">DEEPIKA DUBEY</div><br>
+			<div class="role"><strong>Software Engineer</strong></div>
+			<br>
+			<div class="content">	
+				<p class="desc"> Dynamic and innovative IT professional with 3+years in handling several simultaneous creative design projects,concept creation, frontend designer and developer.
+					<br> I am Self motivated IT student, interested in coding and web development.</p>
+			</div>
+		</div>
+		<div class="resume_item resume_education">
+			<div class="resume_title">Education</div>
+			<div class="resume_info">
+				<div class="resume_data">
+					<div class="year">2016 - 2017</div>
+					<div class="content">
+						
+						<p><strong>10th class:</strong>  </strong> Central Board of Secondary Education from Shree Bal Vinay Mandir, Indore[M.P] with 7.0 C.G.P.A ..</p>
+					</div>
+				</div>
+				<div class="resume_data">
+					<div class="year">2018 - 2019</div>
+					<div class="content">
+						
+						<p><strong>Intermediate:</strong>Class 12th of M.P Board with 75percentage.</p>
+					</div>
+				</div>
+				<div class="resume_data">
+					<div class="year">2019 - 2023</div>
+					<div class="content">
+						<p><strong>Qualification: </strong> B.Tech in Information Technology & Engineering(2019-2023) from Chameli Devi Group Of Institution under Rajiv Gandhi Proudyogiki Vishwavidyalaya with C.G.P.A 8.5..</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="resume_item resume_experience">
+			<div class="resume_title">Project Undertaken</div>
+			<div class="resume_info">
+				<div class="resume_data">
+					
+					<div class="content">
+						<ul>
+							<li>I Developed Personal Portfolio Using  HTML,CSS,PHP and SQL.</li><BR>
+							<li>I Created Responsive Business ,Ecommerce Websites. </li><br>
+							<li>Also I Have Worked on REACTJS Websites.</li><br>
+							
+						</ul>
+						
+					</div>
+				</div>
+		
+
+		<div class="resume_item resume_experience">
+			<div class="resume_title">INTERNSHIPS</div>
+			<div class="resume_info">
+				<div class="resume_data">
+					
+					<div class="content">
+						<ul>
+							<h4>Backend Development </H4>
+                             <H5>LetsGrowMore, Virtual <br> Aug 2021 - Sep 2021</H5>
+                            <div>I Had worked as a Backend Developer at Lets Grow More Community.
+							</div>
+						</ul>
+                       <br>
+						<ul>
+							<h4>Web Development </H4>
+                             <H5>TECHNOPHILE BUD, Virtual  <br> Aug 2021 - Sep 2021</H5>
+                            <div>I had worked as a Frontend web developer .
+							</div>
+						</ul>
+						<br>
+						<ul>
+							<h4>Android Development </H4>
+                             <H5>THE SPARK FOUNDATION<br> Sep 2021 - Oct 2021</H5>
+                            <div>I had worked as a Android developer .
+							</div>
+						</ul>
+						
+						<ul>
+							<h4>Web Development </H4>
+                             <H5>Interns Academy <br> Oct 2021 - present</H5>
+                           
+						</ul>
+					</div>
+				</div>
+				<div class="resume_item resume_skills">
+					<div class="resume_title">Skills</div>
+					<br>
+					<h3>Web Technologies</h3><br>
+					<div class="resume_info">
+						<div class="skills_list">
+
+							<div class="skills_left">I have good experience in frontend programming and designing using HTML5,CSS3,BOOTSTRAP and JAVASCRIPT .</div>
+						
+						</div> <br>
+						<div class="skills_list">
+							<div class="skills_left"> Have good knowledge of relational database MYSQL.</div>
+							
+						</div> <br>
+						<div class="skills_list">
+							<div class="skills_left">I also have knowledge of backend technologies .</div>
+						</div><br>
+							<h3>Programming Languages</h3><br>
+							<div class="resume_info">
+								<div class="skills_list">
+		
+									<div class="skills_left">Having good experience of c , c++ Languages.</div>
+								
+								</div><br>
+								<div class="skills_list">
+									<div class="skills_left"> Highly Efficient in java & object-oriented programming.</div>
+		
+								</div><br>
+								<div class="skills_list">
+									<div class="skills_left">Having good knowledge of Data Structure concepts.</div>
+									
+								</div>
+							
+					</div>
+				</div>
+			</div>
+ 		</div>
+               
+	
+		<div class="resume_item resmue_interests">
+			<div class="resume_title">Experience</div>
+			<div class="resume_info">
+				<div class="interests">
+					<div class="int_icon">
+						<i class="fas fa-volleyball-ball"></i>
+					</div>
+					<div class="int_data">Volleyball</div>
+				</div>
+				<div class="interests">
+					<div class="int_icon">
+						<i class="fas fa-book-open"></i>
+					</div>
+					<div class="int_data">Reading</div>
+				</div>
+				<div class="interests">
+					<div class="int_icon">
+						<i class="fas fa-film"></i>
+					</div>
+					<div class="int_data">Movies</div>
+				</div>
+				<div class="interests">
+					<div class="int_icon">
+						<i class="fas fa-biking"></i>
+					</div>
+					<div class="int_data">Riding</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
+
